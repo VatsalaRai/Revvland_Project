@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revvland Motocross</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+{% if session.admin %}
+<aside><h1>REVVLAND</h1><p class="tag">MOTOCROSS EVENT MANAGEMENT</p>
+{% for path, label in nav %}<a href="{{ path }}" class="{{ 'on' if request.path == path else '' }}">{{ label }}</a>{% endfor %}
+<a href="/logout" class="out">Log out</a></aside>
+{% endif %}
+<main>
+{% for cat, text in get_flashed_messages(with_categories=true) %}<div class="msg {{ cat }}">{{ text }}</div>{% endfor %}
+{% block body %}{% endblock %}
+</main></body></html>

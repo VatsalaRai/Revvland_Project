@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>{{ title }}</h2>
+{% if stats %}<div class="stats">{% for label, value in stats %}<div class="stat"><b>{{ value }}</b><span>{{ label }}</span></div>{% endfor %}</div>{% endif %}
+{% if form %}
+<form method="post" class="card">
+  {% for name, label, kind, options in form %}
+  <label>{{ label }}
+    {% if kind == "select" %}<select name="{{ name }}" required>{% for v, text in options %}<option value="{{ v }}">{{ text }}</option>{% endfor %}</select>
+    {% else %}<input type="{{ kind }}" name="{{ name }}" step="any" {% if 'optional' not in label %}required{% endif %}>{% endif %}
+  </label>
+  {% endfor %}
+  <button type="submit">Save</button>
+</form>
+{% endif %}
+{% if sub %}<h3>{{ sub }}</h3>{% endif %}
+<div class="wrap"><table>
+  <tr>{% for c in cols %}<th>{{ c.replace('_', ' ') }}</th>{% endfor %}</tr>
+  {% for row in rows %}<tr>{% for v in row %}<td>{{ v }}</td>{% endfor %}</tr>{% else %}<tr><td colspan="{{ cols|length }}">No records</td></tr>{% endfor %}
+</table></div>
+{% endblock %}
