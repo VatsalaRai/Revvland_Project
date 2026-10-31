@@ -141,6 +141,13 @@ PL/SQL triggers, stored procedures, functions, and views automate critical opera
 - Track-booking conflict detection.
 - Capacity allocation and release.
 - Championship leaderboard generation.
+- 
+## Screenshots 
+<img width="2880" height="1390" alt="image" src="https://github.com/user-attachments/assets/c33258aa-d227-4ea0-ae7f-3701f3fa10ba" />
+<img width="2880" height="1312" alt="image" src="https://github.com/user-attachments/assets/45d143a9-d170-49d5-94d5-e3a3e07c11b8" />
+<img width="2874" height="1290" alt="image" src="https://github.com/user-attachments/assets/2b7009b5-115a-41bc-adc7-181afdc9b00f" />
+
+
 
 ## Testing and Evaluation
 
